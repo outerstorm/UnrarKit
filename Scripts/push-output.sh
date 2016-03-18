@@ -5,8 +5,10 @@ declare exitCode;
 $(npm bin)/travis-after-all
 exitCode=$?
 
+echo -e "\n"
+
 if [ $exitCode -ne 0 ]; then
-    echo -e "\n\nAll builds not done yet, or failed"
+    echo -e "\nAll builds not done yet, or failed"
     exit 0
 fi
 
@@ -15,6 +17,7 @@ if [ -z "$TRAVIS_TAG" ]; then
     exit 0
 fi
 
+echo -e "\nLinting podspec..."
 pod spec lint --fail-fast
 
 if [ $? -ne 0 ]; then
