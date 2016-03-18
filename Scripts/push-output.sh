@@ -5,7 +5,7 @@ declare exitCode;
 $(npm bin)/travis-after-all
 exitCode=$?
 
-echo -e "\n"
+echo
 
 if [ $exitCode -ne 0 ]; then
     echo -e "\nAll builds not done yet, or failed"
