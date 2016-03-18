@@ -30,6 +30,8 @@ fi
 if ! [[ $TRAVIS_TAG =~ ^[0-9\.]+(\-beta[0-9]*)?$ ]]; then
     echo -e "\nBranch build not a valid version number: $TRAVIS_TAG"
     exit 0
+else
+    echo -e "\nTag looks like a version number: $TRAVIS_TAG"
 fi
 
 echo -e "\nPushing to CocoaPods\n"
