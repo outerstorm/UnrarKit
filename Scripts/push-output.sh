@@ -17,10 +17,10 @@ if [ -z "$TRAVIS_TAG" ]; then
     exit 0
 fi
 
-pod spec lint --fail-fast --verbose
+pod spec lint --fail-fast
 
 if [ $? -ne 0 ]; then
-    echo -e "\nPodspec failed lint"
+    echo -e "\nPodspec failed lint (tag probably doesn't match version). Run again with --verbose to troubleshoot"
     exit 0
 fi
 
