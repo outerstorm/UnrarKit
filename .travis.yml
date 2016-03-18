@@ -20,9 +20,7 @@ matrix:
 
     - xcode_scheme: UnrarKit iOS
       xcode_sdk: iphonesimulator
-      env:
-      - NAME=iOS
-      - secure: YTWr9wh/Ud39iWSN7uYojg2DkIDOGUhlNwguX3p6e7hrW3qMTzTceWHVFAGTmUnEiiVQf6f0QZlZEXUPHPE6ymgiY6TFZYe3/ptGpK8TRDwX1lQCujMuEpaCxtT5p+f+NjVnJlWywZnUU2R//EYNj154mWADFMDsK+rWJBaBa/U=
+      env: NAME=iOS
 
 #    - xcode_scheme: UnrarExample
 #      xcode_sdk: iphonesimulator
