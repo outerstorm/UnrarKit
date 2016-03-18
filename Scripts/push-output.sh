@@ -28,7 +28,7 @@ fi
 # Oh no! For tagged builds, branch == tag
 echo -e "\n\ntravis branch: '$TRAVIS_BRANCH'\ntravis tag: '$TRAVIS_TAG'\n\n"
 
-git_branch=git branch
+git_branch=$(git branch)
 
 echo -e "\n\ngit branch: '$git_branch'\n\n"
 
