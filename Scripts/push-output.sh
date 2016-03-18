@@ -18,23 +18,17 @@ if [ -z "$TRAVIS_TAG" ]; then
 fi
 
 echo -e "\nLinting podspec..."
-pod spec lint --fail-fast
+# For now, to speed up runs of the script
+#pod spec lint --fail-fast
 
 if [ $? -ne 0 ]; then
     echo -e "\nPodspec failed lint (tag probably doesn't match version). Run again with --verbose to troubleshoot"
     exit 0
 fi
 
-# Oh no! For tagged builds, branch == tag
-echo -e "\n\ntravis branch: '$TRAVIS_BRANCH'\ntravis tag: '$TRAVIS_TAG'\n\n"
-
-git_branch=$(git branch)
-
-echo -e "\n\ngit branch: '$git_branch'\n\n"
-
-# Make sure non-master builds are pre-release
-if [ "$TRAVIS_BRANCH" -ne "master" ] && [[ "$TRAVIS_TAG" != *"beta"* ]]; then
-    echo -e "\nBranch build not tagged with 'beta'"
+# Make sure tag name is version number
+if ! [[ "$TRAVIS_TAG" =~ '[0-9\.](-beta[0-9]*)?' ]]; then
+    echo -e "\nBranch build not a valid version number: $TRAVIS_TAG"
     exit 0
 fi
 
