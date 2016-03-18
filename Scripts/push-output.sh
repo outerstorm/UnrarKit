@@ -10,8 +10,6 @@ if [ $exitCode -ne 0 ]; then
     exit 0
 fi
 
-echo "Tag: '$TRAVIS_TAG'"
-
 if [ -z "$TRAVIS_TAG" ]; then
     echo -e "\nBuild is not tagged"
     exit 0
