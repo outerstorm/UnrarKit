@@ -1,6 +1,9 @@
 language: objective-c
 osx_image: xcode7.3
 
+env:
+  secure: YTWr9wh/Ud39iWSN7uYojg2DkIDOGUhlNwguX3p6e7hrW3qMTzTceWHVFAGTmUnEiiVQf6f0QZlZEXUPHPE6ymgiY6TFZYe3/ptGpK8TRDwX1lQCujMuEpaCxtT5p+f+NjVnJlWywZnUU2R//EYNj154mWADFMDsK+rWJBaBa/U=
+
 before_install:
 #    - brew update
 #    - brew install carthage
