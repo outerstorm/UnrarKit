@@ -51,11 +51,6 @@
                BlueprintName = "UnrarKit Tests"
                ReferencedContainer = "container:UnrarKit.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "ExtractFilesTests/testFailure">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>
