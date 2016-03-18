@@ -25,7 +25,12 @@ if [ $? -ne 0 ]; then
     exit 0
 fi
 
-echo -e "\n\nbranch: '$TRAVIS_BRANCH'\ntag: '$TRAVIS_TAG'\n\n"
+# Oh no! For tagged builds, branch == tag
+echo -e "\n\ntravis branch: '$TRAVIS_BRANCH'\ntravis tag: '$TRAVIS_TAG'\n\n"
+
+git_branch=git branch
+
+echo -e "\n\ngit branch: '$git_branch'\n\n"
 
 # Make sure non-master builds are pre-release
 if [ "$TRAVIS_BRANCH" -ne "master" ] && [[ "$TRAVIS_TAG" != *"beta"* ]]; then
