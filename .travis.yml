@@ -31,18 +31,7 @@ script:
 #  - ./Scripts/cocoapod-validate.sh
 
 after_script:
-  - |
-       echo "Checking whether to push build"
-       declare exitCode;
-
-       $(npm bin)/travis-after-all
-       exitCode=$?
-
-       if [ $exitCode -eq 0 ]; then
-         echo "Build succeeded"
-       else
-         echo "Build not done yet, or failed"
-       fi
+  - ./Scripts/push-output.sh
 
 # Turn on Docker, container-based infrastructure
 sudo: false
