@@ -831,8 +831,4 @@ int CALLBACK BufferedReadCallbackProc(UINT msg, long UserData, long P1, long P2)
     return NO;
 }
 
-#if TARGET_OS_IPHONE
-xyz
-#endif
-
 @end
