@@ -2,6 +2,8 @@
 
 echo
 
+echo '$COCOAPODS_TRUNK_TOKEN'
+
 # Only potentially push to CocoaPods when it's a tagged build
 if [ -z "$TRAVIS_TAG" ]; then
     echo -e "\nBuild is not tagged"
