@@ -32,6 +32,7 @@ script:
 
 after_script:
   - |
+       echo "Checking whether to push build"
        declare exitCode;
 
        $(npm bin)/travis-after-all
@@ -40,7 +41,7 @@ after_script:
        if [ $exitCode -eq 0 ]; then
          echo "Build succeeded"
        else
-         echo "Build failed"
+         echo "Build not done yet, or failed"
        fi
 
 # Turn on Docker, container-based infrastructure

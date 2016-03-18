@@ -258,4 +258,9 @@
     XCTAssertFalse(dirExists, @"Directory successfully created for invalid archive");
 }
 
+- (void)testFailure
+{
+    XCTAssertFalse(@"This test will always fail");
+}
+
 @end
