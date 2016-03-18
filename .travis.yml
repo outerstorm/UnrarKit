@@ -18,7 +18,7 @@ matrix:
 
     - xcode_scheme: UnrarKit iOS
       xcode_sdk: iphonesimulator
-      env: NAME=iOSTests
+      env: NAME=iOS
 
 #    - xcode_scheme: UnrarExample
 #      xcode_sdk: iphonesimulator
