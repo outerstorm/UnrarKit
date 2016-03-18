@@ -26,8 +26,8 @@ if [ $? -ne 0 ]; then
     exit 0
 fi
 
-# Make sure tag name is version number
-if ! [[ "$TRAVIS_TAG" =~ '[0-9\.](-beta[0-9]*)?' ]]; then
+# Make sure tag name looks like a version number
+if ! [[ "$TRAVIS_TAG" =~ '[0-9\.]+(-beta[0-9]*)?' ]]; then
     echo -e "\nBranch build not a valid version number: $TRAVIS_TAG"
     exit 0
 fi
