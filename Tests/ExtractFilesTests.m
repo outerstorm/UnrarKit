@@ -16,7 +16,7 @@
 
 - (void)testExtractFiles
 {
-    #if TARGET_OS_IPHONE
+    #if !TARGET_OS_IPHONE
     XCTAssertFail(@"iOS-only test failure");
     #endif
 
