@@ -25,8 +25,10 @@ if [ $? -ne 0 ]; then
     exit 0
 fi
 
-# Make non-master builds pre-release
-if [ "$TRAVIS_BRANCH" -ne "master" ] || [[ "$TRAVIS_TAG" != *"beta"* ]]; then
+echo -e "\n\nbranch: '$TRAVIS_BRANCH'\ntag: '$TRAVIS_TAG'\n\n"
+
+# Make sure non-master builds are pre-release
+if [ "$TRAVIS_BRANCH" -ne "master" ] && [[ "$TRAVIS_TAG" != *"beta"* ]]; then
     echo -e "\nBranch build not tagged with 'beta'"
     exit 0
 fi
