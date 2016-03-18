@@ -27,7 +27,7 @@ matrix:
 script:
   - xctool -workspace $TRAVIS_XCODE_WORKSPACE -scheme "$TRAVIS_XCODE_SCHEME" -sdk $TRAVIS_XCODE_SDK -configuration Release
 #  - xctool -workspace $TRAVIS_XCODE_WORKSPACE -scheme "$TRAVIS_XCODE_SCHEME" -sdk $TRAVIS_XCODE_SDK -configuration Release analyze test
-  - ./Scripts/carthage-validate.sh
+#  - ./Scripts/carthage-validate.sh
 #  - ./Scripts/cocoapod-validate.sh
 
 after_script:
