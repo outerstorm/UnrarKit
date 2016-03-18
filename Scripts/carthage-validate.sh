@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exit 1
+
 if [ -z ${TRAVIS+x} ]; then
     TRAVIS_BUILD_DIR="/Users/Dov/Source Code/UnrarKit"
     TRAVIS_BRANCH=carthage

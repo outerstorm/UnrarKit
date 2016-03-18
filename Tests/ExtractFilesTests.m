@@ -16,10 +16,6 @@
 
 - (void)testExtractFiles
 {
-    #if !TARGET_OS_IPHONE
-    XCTAssertFail(@"iOS-only test failure");
-    #endif
-
     NSArray *testArchives = @[@"Test Archive.rar",
                               @"Test Archive (Password).rar",
                               @"Test Archive (Header Password).rar"];
