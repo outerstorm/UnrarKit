@@ -20,7 +20,7 @@ $(npm bin)/travis-after-all
 exitCode=$?
 
 if [ $exitCode -ne 0 ]; then
-    echo -e "\nAll builds not done yet, or failed"
+    echo -e "\nThis or another matrixed build has failed"
     exit 0
 fi
 
