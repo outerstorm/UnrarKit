@@ -10,14 +10,14 @@ if [ $exitCode -ne 0 ]; then
     exit 0
 fi
 
-echo "Branch: '$TRAVIS_TAG'"
+echo "Tag: '$TRAVIS_TAG'"
 
 if [ -z "$TRAVIS_TAG" ]; then
     echo -e "\nBuild is not tagged"
     exit 0
 fi
 
-pod spec lint --fail-fast
+pod spec lint --fail-fast --verbose
 
 if [ $? -ne 0 ]; then
     echo -e "\nPodspec failed lint"
