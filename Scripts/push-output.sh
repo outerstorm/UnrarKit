@@ -32,6 +32,18 @@ if [ $? -ne 0 ]; then
     exit 0
 fi
 
+# Debugging - make sure plist looks good
+echo -e "\n\nplist before\n\n"
+cat Resources/UnrarKit-Info.plist
+
+echo -e "\nUpdating version numbers in plist"
+agvtool new-version -all "$TRAVIS_BUILD_NUMBER" # CFBundleVersion
+agvtool new-marketing-version -all "$TRAVIS_TAG" # CFBundleVersion
+
+# Debugging - make sure plist looks good
+echo -e "\n\nplist after\n\n"
+cat Resources/UnrarKit-Info.plist
+
 echo -e "\nPushing to CocoaPods\n"
 #echo $COCOAPODS_TRUNK_TOKEN
 #pod trunk push
