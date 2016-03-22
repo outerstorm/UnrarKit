@@ -34,7 +34,7 @@ cat Resources/UnrarKit-Info.plist
 
 echo "Updating version numbers in plist to '$1'.."
 agvtool new-version -all "$1" # CFBundleVersion
-agvtool new-marketing-version -all "$1" # CFBundleVersion
+agvtool new-marketing-version "$1" # CFBundleShortVersionString
 
 # Debugging - make sure plist looks good
 echo -e "\n\nplist after\n\n"
