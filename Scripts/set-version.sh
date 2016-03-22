@@ -28,19 +28,9 @@ if [ -z "$RELEASE_NOTES" ]; then
     exit 1
 fi
 
-# Debugging - make sure plist looks good
-echo -e "\n\nplist before\n\n"
-cat Resources/UnrarKit-Info.plist
-
 echo "Updating version numbers in plist to '$1'.."
 agvtool new-version -all "$1" # CFBundleVersion
 agvtool new-marketing-version "$1" # CFBundleShortVersionString
-
-# Debugging - make sure plist looks good
-echo -e "\n\nplist after\n\n"
-cat Resources/UnrarKit-Info.plist
-
-exit 0
 
 echo "Committing updated plist..."
 git commit -m "Updated plist to v$1" Resources
