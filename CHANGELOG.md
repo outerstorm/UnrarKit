@@ -1,5 +1,11 @@
 # UnrarKit CHANGELOG
 
+## 2.8
+
+* Line 1
+* Line 2
+
+
 ## 2.7
 
 Updated to the latest version of the UnRAR library (v5.3.11)
