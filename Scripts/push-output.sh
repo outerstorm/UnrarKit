@@ -28,7 +28,7 @@ echo -e "\nLinting podspec..."
 pod spec lint --fail-fast
 
 if [ $? -ne 0 ]; then
-    echo -e "\nPodspec failed lint (tag probably doesn't match version). Run again with --verbose to troubleshoot"
+    echo -e "\nPodspec failed lint. Run again with --verbose to troubleshoot"
     exit 0
 fi
 
