@@ -1,10 +1,8 @@
 # UnrarKit CHANGELOG
 
-## 2.8
+## 2.7.1
 
-* Line 1
-* Line 2
-
+Now pushing tagged builds to CocoaPods from Travis
 
 ## 2.7
 
