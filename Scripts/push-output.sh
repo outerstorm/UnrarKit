@@ -34,4 +34,4 @@ fi
 
 echo -e "\nPushing to CocoaPods\n"
 #echo $COCOAPODS_TRUNK_TOKEN
-#pod trunk push
+pod trunk push
