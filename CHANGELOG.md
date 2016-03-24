@@ -2,7 +2,8 @@
 
 ## 2.7.1
 
-Now pushing tagged builds to CocoaPods from Travis
+* Pushing tagged builds to CocoaPods from Travis
+* Adding release notes to GitHub
 
 ## 2.7
 
