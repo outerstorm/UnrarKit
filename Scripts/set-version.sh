@@ -27,12 +27,7 @@ if [ "$#" -ne 1 ]; then
     exit 1
 fi
 
-# Remove the "-beta#" from the end of the version number
-[[ $1 =~ ^([0-9\.]+)(\-beta[0-9]*)?$ ]]
-RELEASE_VERSION=${BASH_REMATCH[1]}
-
-# Require release notes to be written
-RELEASE_NOTES=$(sed "/^## $RELEASE_VERSION$/,/^##/!d;//d;/^$/d" CHANGELOG.md)
+RELEASE_NOTES=$(./Scripts/get-release-notes.sh $1)
 if [ -z "$RELEASE_NOTES" ]; then
     echo -e "${RED}Please add release notes for v$1 into CHANGELOG.md$COLOR_OFF"
     exit 1
