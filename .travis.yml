@@ -4,7 +4,7 @@ osx_image: xcode7.3
 before_install:
 # Fixing an issue with xctool 0.2.8 in conjunction with Xcode 7.3
     - brew update
-    - brew uninstall xctool && brew install --HEAD xctool
+    - brew uninstall --force xctool && brew install --HEAD xctool
 # Used to allow pushing to CocoaPods only after all matrixed builds have succeeded
     - npm install --save-dev travis-after-all
 
@@ -28,6 +28,7 @@ matrix:
       env: NAME=ExampleAppBuild
 
 script:
+  - xctool --version
   - xctool -workspace $TRAVIS_XCODE_WORKSPACE -scheme "$TRAVIS_XCODE_SCHEME" -sdk $TRAVIS_XCODE_SDK -configuration Release analyze test
   - ./Scripts/carthage-validate.sh
   - ./Scripts/cocoapod-validate.sh
